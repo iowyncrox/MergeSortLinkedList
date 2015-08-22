@@ -42,12 +42,7 @@ public class LinkedList<T extends Comparable<T>> implements Iterable<T> {
 		if (head == null || head.next == null)
 			return head;
 
-		int totalNumberOfElements = 0;
-		Node<T> temp = head;
-		while (temp != null) {
-			totalNumberOfElements++;
-			temp = temp.next;
-		}
+		int totalNumberOfElements = getCount(head);
 
 		int mid = totalNumberOfElements / 2;
 
@@ -115,6 +110,15 @@ public class LinkedList<T extends Comparable<T>> implements Iterable<T> {
 		}
 
 		return duplicateHead.next;
+	}
+
+	private int getCount(Node<T> head) {
+		int count = 0;
+		while (head != null) {
+			count++;
+			head = head.next;
+		}
+		return count;
 	}
 
 	private int compare(T a, T b) {
