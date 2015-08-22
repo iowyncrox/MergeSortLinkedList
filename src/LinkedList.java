@@ -33,8 +33,8 @@ public class LinkedList<T extends Comparable<T>> implements Iterable<T> {
 	 * merge sort linked list
 	 *
 	 ********************************************************/
-	public void mergeSortLinkedList(LinkedList<T> linkedList) {
-		head = sortLinkedList(linkedList.head);
+	public void mergeSortLinkedList() {
+		head = sortLinkedList(head);
 	}
 
 	private Node<T> sortLinkedList(Node<T> head) {
@@ -181,7 +181,7 @@ public class LinkedList<T extends Comparable<T>> implements Iterable<T> {
 		list1.addFirst(8);
 		System.out.println(list1);
 
-		list1.mergeSortLinkedList(list1);
+		list1.mergeSortLinkedList();
 		System.out.println(list1);
 	}
 }
